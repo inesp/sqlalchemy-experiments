@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: "postgres:11.4"
+    restart: always
+    ports:
+      - "1120:5432/tcp"
+    environment:
+      - POSTGRES_PASSWORD=sql_alchemy
+      - POSTGRES_USER=sql_alchemy
+      - POSTGRES_DB=sql_alchemy
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+
+volumes:
+  pgdata:
